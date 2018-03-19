@@ -1,0 +1,14 @@
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDMX9rgOq1UIjoYgQLaDYV6FPnucPhx8QQ",
+    authDomain: "restaurantmap-98938.firebaseapp.com",
+    databaseURL: "https://restaurantmap-98938.firebaseio.com",
+    projectId: "restaurantmap-98938",
+    storageBucket: "restaurantmap-98938.appspot.com",
+    messagingSenderId: "831195437818"
+  };
+  firebase.initializeApp(config);
+</script>

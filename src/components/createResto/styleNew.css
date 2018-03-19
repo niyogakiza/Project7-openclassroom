@@ -1,0 +1,55 @@
+.create_resto span {
+    background-color: orange;
+    color: wheat;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+.create_resto form{
+    display: inline-block;
+}
+.create_resto form input[type="text"]{
+    border: none;
+    padding: 10px;
+    border-right: 1px solid cornsilk;
+}
+.create_resto button{
+    background: none;
+    border: none;
+    background-color: blue;
+    color: wheat;
+    padding: 10px 25px;
+    font-weight: bold;
+}
+
+.resto-modal {
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    width: 35%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.resto-modal .card-image {
+    height: 250px;
+    background-size: cover;
+    border-radius: 2px;
+    background-position: center;
+    border: darkgray 5px inset;
+}
+
+.resto-modal .filter {
+    padding: 10px 0;
+    box-shadow: 0 0 3px rgba(50, 50, 50, 0.5);
+}
+
+.resto-modal .filter span{
+    margin-right: 10px;
+}
+
+.resto-modal .filter input[type="range"] {
+    vertical-align: middle;
+    width: 250px;
+    margin-right: 20px;
+}
