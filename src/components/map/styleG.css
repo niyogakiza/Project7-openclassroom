@@ -13,11 +13,6 @@ body {
     background-color: #222;
 }
 
-.search{
-    background-color: #fff;
-
-}
-
 #loading-wrapper {
     position: fixed;
     width: 100%;

@@ -5,7 +5,7 @@ class Filter extends Component{
         super(props);
 
         this.state = {
-            value: 4
+            value: 5
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -13,7 +13,6 @@ class Filter extends Component{
 
     handleChange(ev){
         const { update } = this.props;
-
         this.setState({ value: ev.target.value });
         update(ev.target.value);
     }

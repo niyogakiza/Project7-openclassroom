@@ -1,7 +1,9 @@
+
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { addReview } from '../../actions/index'
+
 
 
 
@@ -11,11 +13,13 @@ class UserReview extends Component{
 
         this.state = {
             text: '',
-            rating: 3
+            rating: null
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+
 
     handleSubmit(e){
         e.preventDefault();
@@ -37,7 +41,7 @@ class UserReview extends Component{
     render() {
         const {text, rating} = this.state;
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="col s12">
                Your Review: <input
                        name="text"
                        value={text}
@@ -45,18 +49,27 @@ class UserReview extends Component{
                        onChange={this.handleChange}
                        placeholder="Add your review"
                 />
-                Rating: <select
+
+                <div className="input-field col s12">
+                    Rating: <select
+                    className="browser-default"
                     onChange={this.handleChange}
                     name="rating"
-                    value={rating}
+                    value={rating || ''}
                 >
+                    <option value={this.state.selected}>Choose your rating</option>
                     <option value="1">1 star</option>
                     <option value="2">2 star</option>
                     <option value="3">3 star</option>
                     <option value="4">4 star</option>
                     <option value="5">5 star</option>
                 </select>
-                <button type="submit">Submit Review</button>
+                </div>
+
+                <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i className="material-icons right">send</i>
+                </button>
+
             </form>
         )
     }

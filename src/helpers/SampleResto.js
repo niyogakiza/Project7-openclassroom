@@ -1,20 +1,14 @@
 export default [
     {
         "sample":true,
-        "icon": "https://mapicons.mapsmarker.com/wp-content/uploads/mapicons/shape-default/color-8c4eb8/shapecolor-white/shadow-1/border-color/symbolstyle-color/symbolshadowstyle-no/gradient-no/restaurant.png",
+        "icon": 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
         "id": 0,
-        "name": "Raja Monkey",
-        "formatted_phone_number": "121 777 9090",
-        "url": "monkey.com",
-        "website": "rajamonkey.com",
+        "name": "Raja",
         "geometry": {
             "location": {
-                "lat": 39.5696,
-                "lng": 2.6502
+                "lat": 52.3775 ,
+                "lng": -1.8139
             }
-        },
-        "opening_hours": {
-            "open_now": true
         },
         "rating": "4",
         "ratings": [{
@@ -31,20 +25,13 @@ export default [
     },
     {
         "sample":true,
-        "icon": "https://mapicons.mapsmarker.com/wp-content/uploads/mapicons/shape-default/color-17bd17/shapecolor-dark/shadow-1/border-white/symbolstyle-white/symbolshadowstyle-no/gradient-no/restaurant.png",
-        "id": 1,
+        "icon": 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
         "name": "Jyoti Vegeterian",
-        "formatted_phone_number": "973429346945",
-        "url": "jyoti.com",
-        "website": "www.jyoti.com",
         "geometry": {
             "location": {
-                "lat": 39.5696,
-                "lng": 2.6502
+                "lat": 52.3856 ,
+                "lng":-1.8374
             }
-        },
-        "opening_hours": {
-            "open_now": true
         },
         "rating": 3,
         "ratings": [{
@@ -61,20 +48,14 @@ export default [
     },
     {
         "sample":true,
-        "icon": "https://mapicons.mapsmarker.com/wp-content/uploads/mapicons/shape-default/color-17bd17/shapecolor-dark/shadow-1/border-white/symbolstyle-white/symbolshadowstyle-no/gradient-no/restaurant.png",
+        "icon": 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
         "id": 2,
         "name": "Mughal-e-Azam",
-        "formatted_phone_number": "975863637853",
-        "url": "mughan.com",
-        "website": "www.mughal.com",
         "geometry": {
             "location": {
-                "lat": 39.5696,
-                "lng": 2.6502
+                "lat": 52.3790 ,
+                "lng": -1.8120
             }
-        },
-        "opening_hours": {
-            "open_now": true
         },
         "rating": 2,
         "ratings": [{
@@ -91,22 +72,16 @@ export default [
     },
     {
         "sample":true,
-        "icon": "https://mapicons.mapsmarker.com/wp-content/uploads/mapicons/shape-default/color-17bd17/shapecolor-dark/shadow-1/border-white/symbolstyle-white/symbolshadowstyle-no/gradient-no/restaurant.png",
+        "icon": 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
         "id": 3,
         "name": "Jose",
-        "formatted_phone_number": "653454652643",
-        "url": "jose.com",
-        "website": "www.jose.com",
         "geometry": {
             "location": {
-                "lat": 39.5696,
-                "lng": 2.6502
+                "lat": 52.3795 ,
+                "lng": -1.8239
             }
         },
-        "opening_hours": {
-            "open_now": true
-        },
-        "rating": 4.6,
+        "rating": 1,
         "ratings": [{
             "name": "Weston",
             "stars":4,

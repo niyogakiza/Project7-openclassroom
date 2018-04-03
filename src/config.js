@@ -7,9 +7,8 @@ export default () =>{
             places: reducer.places,
             streetview: reducer.streetview,
             newReview: reducer.newReview,
-            sampleResto: reducer.sampleResto
-
-
+            sampleResto: reducer.sampleResto,
+            restaurant: reducer.restaurant
         })
     );
     return store;

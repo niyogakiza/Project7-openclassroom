@@ -1,7 +1,7 @@
-export const createSampleRestaurant = (imageUrl, geopoint, name) =>{
+export const createSampleRestaurant = (name, geopoint, imageUrl) =>{
     return{
         "place_id": Date.now() + Math.floor(Math.random() * 100),
-        "icon": "https://mapicons.mapsmarker.com/wp-content/uploads/mapicons/shape-default/color-ae8bc7/shapecolor-no/shadow-0/border-no/symbolstyle-color/symbolshadowstyle-white/gradient-no/restaurant.png",
+       "icon": "http://www.myiconfinder.com/uploads/iconsets/256-256-56165014858e6dbadaf3ba00d782f125.png",
         "name": name,
         "vicinity": geopoint.formatted_address,
         "geometry": {
@@ -22,3 +22,5 @@ export const createSampleRestaurant = (imageUrl, geopoint, name) =>{
         }]
     }
 };
+
+//'http://maps.google.com/mapfiles/arrow.png'

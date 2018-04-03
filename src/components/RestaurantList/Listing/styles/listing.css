@@ -27,7 +27,7 @@
 
 
 .sidebar .filter input[type="range"] {
-    vertical-align: middle;
+    vertical-align: mathematical;
     width: 250px;
     margin-left: 20px;
 }

@@ -2,14 +2,13 @@
 import React, {Component, Fragment} from 'react'
 import isEqual from 'lodash.isequal'
 import {API_KEY} from "../../actions/Keys"
-import {Map, Marker, GoogleApiWrapper, InfoWindow} from "google-maps-react"
+import {Map, Marker, GoogleApiWrapper} from "google-maps-react"
 import { connect } from 'react-redux'
 import {bindActionCreators} from "redux";
 import {dispatchPlaces, showCreateRestaurant } from "../../actions/index"
 import restaurant from "../../helpers/SampleResto"
-//import CreateResto from "../createResto/CreateResto";
+
 import './styleG.css'
-import {sampleResto} from "../../reducers";
 
 
 
@@ -21,7 +20,6 @@ class GoogleMap extends Component {
         this.state = {
             userLocation: null,
             isReady: false,
-            places: [],
             samplePlaces: restaurant
         };
         this.fetchPlaces = this.fetchPlaces.bind(this);
@@ -29,6 +27,8 @@ class GoogleMap extends Component {
         this.searchNearby = this.searchNearby.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
+
+
 
 
     componentWillReceiveProps(nextProps){
@@ -45,17 +45,15 @@ class GoogleMap extends Component {
          }
     }
 
+
+
     fetchPlaces(mapProps, map){
         this.setState({ isReady: true });
         this.searchNearby(map, map.center);
+
     }
 
-    movedCenter(mapProps, map){
-        const { isReady } = this.state;
-        if(isReady){
-            this.searchNearby(map, map.center);
-        }
-    }
+
 
     searchNearby(map, center) {
         const { google, dispatchPlaces } = this.props;
@@ -63,13 +61,21 @@ class GoogleMap extends Component {
     }
 
 
+    movedCenter(mapProps, map){
+        const { isReady } = this.state;
+        if(isReady){
+            this.searchNearby(map, map.center);
+
+        }
+    }
+
     handleClick() {
         this.props.handleClick();
     }
 
     render(){
-        const{ google, sampleResto } = this.props;
-        const { userLocation, places, samplePlaces } = this.state;
+        const{ google, places} = this.props;
+        const { userLocation,samplePlaces} = this.state;
 
         return(
             <Fragment>
@@ -78,7 +84,7 @@ class GoogleMap extends Component {
                         className='map'
                         google={google}
                         initialCenter={userLocation}
-                        zoom={16}
+                        zoom={12}
                         onReady={this.fetchPlaces}
                         onClick={this.handleClick}
                         onDragend={this.movedCenter}
@@ -89,42 +95,47 @@ class GoogleMap extends Component {
                             name={'currentLocation'}
                             position={userLocation}
                             icon={{
-                            url: userLocation,
-                                anchor: new google.maps.Point(20, 20),
+                                url: userLocation,
+                                anchor: new google.maps.Point(20,20),
                                 scaledSize: new google.maps.Size(40,40)
                             }}
                         />
-                        {/*<InfoWindow*/}
-                            {/*marker={this.state.places}*/}
-                            {/*visible={this.state.showingInfoWindow}>*/}
-                            {/*<div>*/}
-                                {/*<h1>{this.state.places.name}</h1>*/}
-                            {/*</div>*/}
-                        {/*</InfoWindow>*/}
+
+                        {console.log('all first placesssssssss', places)}
+
 
                         {places[0] &&
-                        places.map((place, i) => {
+                            places.map((place, i) => {
                             return (
-                                <Marker
-                                    key={i}
-                                    title={place.name}
-                                    name={place.name}
-                                    position={{
-                                        lat: place.geometry.location.lat(),
-                                        lng: place.geometry.location.lng()
-                                    }}
-                                    icon={{
-                                        url: place.icon,
-                                        anchor: new google.maps.Point(20, 20),
-                                        scaledSize: new google.maps.Size(40, 40)
-                                    }}
-                                />
+                            <Marker
+                            visible={true}
+                            key={i}
+                            title={place.name}
+                            name={place.name}
+                            position={{
+                            lat: place.geometry.location.lat(),
+                            lng: place.geometry.location.lng()
+                        }}
+
+                            icon={{
+                            url: place.icon,
+                            anchor: new google.maps.Point(20, 20),
+                            scaledSize: new google.maps.Size(40, 40)
+
+                        }}
+                            />
                             );
                         })
                         }
-                        {samplePlaces[0] && samplePlaces.map((place, i) => {
+
+                        {/*{console.log('all second placesssssssss', samplePlaces)}*/}
+
+                        {
+                            samplePlaces[0] &&
+                            samplePlaces.map((place, i) => {
                             return (
                                 <Marker
+                                    visible={true}
                                     key={i}
                                     title={place.name}
                                     name={place.name}
@@ -134,7 +145,7 @@ class GoogleMap extends Component {
                                     }}
                                     icon={{
                                         url: place.icon,
-                                        anchor: new google.maps.Point(20, 20),
+                                        anchor: new google.maps.Point(20,20),
                                         scaledSize: new google.maps.Size(40, 40)
                                     }}
                                 />
@@ -170,7 +181,8 @@ const mapDispatchToProps = dispatch  =>{
 };
 
 export  default connect(mapStateToProps, mapDispatchToProps)(GoogleApiWrapper({
-    apiKey: API_KEY
+    apiKey: API_KEY,
+    version: '3'
 })(GoogleMap));
 
 

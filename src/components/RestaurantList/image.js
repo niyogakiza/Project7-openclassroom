@@ -1,5 +1,5 @@
 import React from 'react';
-import resto from '../../images/resto.jpg';
+import resto from '../../img/restoImage.jpg';
 
 export default function Image(props){
     const place = props.place;

@@ -1,5 +1,6 @@
 export const places = (state = [], action) =>{
     return action.type === 'PLACES' ? action.payload : state;
+
 };
 
 export const streetview = ( state = false, action) =>{
