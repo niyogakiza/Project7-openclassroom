@@ -73,7 +73,7 @@ class App extends Component{
         this.setState({service});
         const request = {
             location: center,
-            radius: '3000',
+            radius: '1000',
             type: ['restaurant']
         };
 
