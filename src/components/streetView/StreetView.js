@@ -16,30 +16,27 @@ class StreetView extends Component{
             xEnd: 0,
             yStart: 0,
             yEND: 0
-        };
-        this.handleClose = this.handleClose.bind(this);
-        this.handleDragEnd = this.handleDragEnd.bind(this);
-        this.handleDragStart = this.handleDragStart.bind(this);
+        }
     }
 
-    handleDragStart(ev){
+    handleDragStart = (ev) =>{
         this.setState({
             xStart: ev.clientX,
             yStart: ev.clientY
         });
-    }
+    };
 
-    handleDragEnd(ev){
+    handleDragEnd = (ev) =>{
         this.setState({
             xEnd: ev.clientX,
             yEnd: ev.clientY
         })
-    }
+    };
 
-    handleClose(){
+    handleClose = () =>{
         const { showStreetView } = this.props;
         showStreetView(false);
-    }
+    };
 
     render(){
         const { xStart, xEnd, yStart, yEnd } = this.state;

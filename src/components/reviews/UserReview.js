@@ -14,14 +14,12 @@ class UserReview extends Component{
         this.state = {
             text: '',
             rating: null
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        }
     }
 
 
 
-    handleSubmit(e){
+    handleSubmit = (e) =>{
         e.preventDefault();
         const { text, rating } = this.state;
         const { addReview, pid } = this.props;
@@ -30,13 +28,13 @@ class UserReview extends Component{
             addReview(text, Number(rating), pid);
             this.setState({ text: '', rating: 3});
         }
-    }
+    };
 
-    handleChange(e){
+    handleChange = (e)=>{
         const value = e.target.value;
         const name = e.target.name;
         this.setState({ [name]: value });
-    }
+    };
 
     render() {
         const {text, rating} = this.state;

@@ -12,8 +12,7 @@ class Listing extends Component{
         this.state = {
             filter: 5,
             restaurant: restaurant
-        };
-        this.updateFilter = this.updateFilter.bind(this);
+        }
     }
 
     componentWillReceiveProps(nextProps){
@@ -27,15 +26,13 @@ class Listing extends Component{
         }
     }
 
-    updateFilter(value){
+    updateFilter = (value) =>{
         this.setState({ filter: value });
-    }
+    };
 
     render(){
         const { places, userLocation } = this.props;
         const { filter, restaurant } = this.state;
-
-        // console.log('updated placess inside Listin.js', places)
         return(
             <div className="sidebar">
                 <Filter update={this.updateFilter} />

@@ -21,15 +21,8 @@ class GoogleMap extends Component {
             userLocation: null,
             isReady: false,
             samplePlaces: restaurant
-        };
-        this.fetchPlaces = this.fetchPlaces.bind(this);
-        this.movedCenter = this.movedCenter.bind(this);
-        this.searchNearby = this.searchNearby.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        }
     }
-
-
-
 
     componentWillReceiveProps(nextProps){
         const { userLocation } = this.props;
@@ -46,32 +39,29 @@ class GoogleMap extends Component {
     }
 
 
-
-    fetchPlaces(mapProps, map){
+    fetchPlaces = (mapProps, map) =>{
         this.setState({ isReady: true });
         this.searchNearby(map, map.center);
 
-    }
+    };
 
-
-
-    searchNearby(map, center) {
+    searchNearby = (map, center) =>{
         const { google, dispatchPlaces } = this.props;
         this.props.searchNearby(google, dispatchPlaces, map, center);
-    }
+    };
 
 
-    movedCenter(mapProps, map){
+    movedCenter = (mapProps, map) =>{
         const { isReady } = this.state;
         if(isReady){
             this.searchNearby(map, map.center);
 
         }
-    }
+    };
 
-    handleClick() {
+    handleClick = () => {
         this.props.handleClick();
-    }
+    };
 
     render(){
         const{ google, places} = this.props;
@@ -127,8 +117,6 @@ class GoogleMap extends Component {
                             );
                         })
                         }
-
-                        {/*{console.log('all second placesssssssss', samplePlaces)}*/}
 
                         {
                             samplePlaces[0] &&

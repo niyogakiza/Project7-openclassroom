@@ -6,16 +6,14 @@ class Filter extends Component{
 
         this.state = {
             value: 5
-        };
-
-        this.handleChange = this.handleChange.bind(this);
+        }
     }
 
-    handleChange(ev){
+    handleChange = (ev) =>{
         const { update } = this.props;
         this.setState({ value: ev.target.value });
         update(ev.target.value);
-    }
+    };
     render(){
         const { value } = this.state;
         return(

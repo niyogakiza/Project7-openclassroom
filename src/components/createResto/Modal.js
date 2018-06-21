@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 class Modal extends Component{
 
     render(){
-
-
         if(this.props.isOpen === false)
             return null;
         let modalStyle = {
@@ -59,9 +57,7 @@ class Modal extends Component{
         if(this.props.onClose){
             this.props.onClose()
         }
-        // else if( e.onClick){
-        //     this.props.openModal()
-        // }
+
     }
 }
 export default Modal;

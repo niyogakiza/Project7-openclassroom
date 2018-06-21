@@ -19,14 +19,10 @@ class CreateResto extends Component{
             city: '',
             imageUrl:'',
             error: ''
-        };
-
-        this.handleClose = this.handleClose.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        }
     }
 
-    handleSubmit(ev){
+    handleSubmit=(ev)=>{
         ev.preventDefault();
         const { name, address, city, imageUrl} = this.state;
         const { dispatchPlaces , showCreateRestaurant, places } = this.props;
@@ -50,7 +46,7 @@ class CreateResto extends Component{
 
 
         }
-    }
+    };
 
     closeModal() {
         this.setState({
@@ -58,16 +54,16 @@ class CreateResto extends Component{
         })
     }
 
-    handleChange(ev){
+    handleChange =(ev) =>{
         const name = ev.target.name;
         const value = ev.target.value;
         this.setState({ [name]: value });
-    }
+    };
 
-    handleClose(){
+    handleClose = () =>{
         this.closeModal();
         this.props.showCreateRestaurant(false);
-    }
+    };
 
     render(){
         const { name, address, city,error } = this.state;

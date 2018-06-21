@@ -17,12 +17,7 @@ class Model extends Component{
         this.state = {
             modelOpen: false,
             reviews: []
-        };
-
-        this.toggleStreetView = this.toggleStreetView.bind(this);
-        this.toggleReviews = this.toggleReviews.bind(this);
-        this.renderReviews = this.renderReviews.bind(this);
-
+        }
     }
 
     componentWillReceiveProps(nextProps){
@@ -43,7 +38,7 @@ class Model extends Component{
 
 
 
-    toggleReviews(){
+    toggleReviews = () =>{
         const { modelOpen, reviews } = this.state;
         const { place} = this.props;
 
@@ -64,14 +59,14 @@ class Model extends Component{
             this.setState({ reviews: place.ratings })
         }
 
-    }
+    };
 
-    toggleStreetView(){
+    toggleStreetView = () =>{
         const { streetview, showStreetView, place } = this.props;
         streetview ? showStreetView(false) : showStreetView(place);
-    }
+    };
 
-    renderReviews(){
+    renderReviews = () =>{
         const { modelOpen, reviews } = this.state;
         const { place } = this.props;
         if(modelOpen){
@@ -94,7 +89,7 @@ class Model extends Component{
 
             }
         }
-    }
+    };
 
     render(){
         const { place} = this.props;

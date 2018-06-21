@@ -3,8 +3,6 @@ import React from 'react';
 import './css/reviews.css'
 
 const Reviews = ({reviews}) => {
-
-
     return(
         <div className="reviews">
             {
@@ -25,6 +23,6 @@ const Reviews = ({reviews}) => {
             }
         </div>
     );
-}
+};
 
 export default Reviews;
